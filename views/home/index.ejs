@@ -1,0 +1,472 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fiama - Flower Shop eCommerce HTML Template</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Place favicon.png in the root directory -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Font Icons css -->
+    <link rel="stylesheet" href="css/font-icons.css">
+    <!-- plugins css -->
+    <link rel="stylesheet" href="css/plugins.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<!-- Body main wrapper start -->
+<div class="body-wrapper">
+
+    <!-- HEADER AREA START (header-3) -->
+    <header class="ltn__header-area ltn__header-3 section-bg-6">
+        <!-- header-bottom-area start -->
+        <div class="header-bottom-area ltn__border-top ltn__header-sticky  ltn__sticky-bg-white ltn__primary-bg---- menu-color-white---- d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col header-menu-column justify-content-center">
+                        <div class="sticky-logo">
+                            <div class="site-logo">
+                                <a href="/"><img src="img/logo.png" alt="Logo"></a>
+                            </div>
+                        </div>
+                        <div class="header-menu header-menu-2">
+                            <nav>
+                                <div class="ltn__main-menu">
+                                    <ul>
+                                        <li class="menu-icon">
+                                            <a href="/">
+                                                Trang Chủ
+                                            </a>
+                                        </li>
+                                        <li id="rank-btn" class="menu-icon">
+                                            <a href="javascript:void(0)">Bảng Xếp Hạng</a>
+                                        </li>
+
+                                        <!-- ejs if user.role > 1 -->
+                                        <% if (user.role > 0) {%>
+                                            <li class="menu-icon">
+                                                <a href="/admin">
+                                                    Quản Lý
+                                                </a>
+                                            </li>
+                                        <%} %>
+
+                                        <li>
+                                            <a id="logout" href="javascript:void(0)">
+                                                Đăng Xuất
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header-bottom-area end -->
+    </header>
+
+    <!-- PRODUCT AREA START -->
+    <div class="ltn__product-area ltn__product-gutter  pt-65 pb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title-area text-center">
+                        <h1 class="section-title section-title-border">
+                            Bình Chọn Ngay
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+
+                <!-- ltn__product-item -->
+                <% actors.forEach(function(actor){ %>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__product-item text-center" data-actor="<%- actor.id %>">
+                                <div class="product-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="<%- actor.avatar %>" alt="#">
+                                    </a>
+                                    <div class="product-hover-action product-hover-action-2">
+                                        <ul>
+                                            <li class="add-to-cart">
+                                                <a href="javascript:void(0)" class="_vote_btn cart-text d-none d-xl-block" title="Vote" data-vote="<%- actor.id %>">
+                                                    Bình Chọn Ngay
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h2 class="product-title">
+                                        <a href="javascript:void(0)" class="_vote_btn" data-vote="<%- actor.id %>">
+                                            <%- actor.name %>
+                                        </a>
+                                    </h2>
+                                    <div class="product-price" style="color: #e91e63;">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg>
+
+                                        <span class="likes">
+                                            <%- actor.likes %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <!-- PRODUCT SLIDER AREA END -->
+
+    <!-- FOOTER AREA START -->
+    <footer class="ltn__footer-area ">
+        <div class="footer-top-area  section-bg-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">My Accoout</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="account.html">My account</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="cart.html">Shopping Cart</a></li>
+                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Quick Links</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="locations.html">Store Location</a></li>
+                                    <li><a href="order-tracking.html">Orders Tracking</a></li>
+                                    <li><a href="product-details.html">Size Guide</a></li>
+                                    <li><a href="account.html">My account</a></li>
+                                    <li><a href="faq.html">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Information</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="contact.html">Privacy Page</a></li>
+                                    <li><a href="about.html">About us</a></li>
+                                    <li><a href="contact.html">Careers</a></li>
+                                    <li><a href="faq.html">Delivery Inforamtion</a></li>
+                                    <li><a href="contact.html">Term & Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Customer Service</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="product-details.html">Shipping Policy</a></li>
+                                    <li><a href="contact.html">Help & Contact Us</a></li>
+                                    <li><a href="account.html">Returns & Refunds</a></li>
+                                    <li><a href="shop.html">Online Stores</a></li>
+                                    <li><a href="contact.html">Terms and Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-about-widget">
+                            <h4 class="footer-title">About Our Shop</h4>
+                            <div class="footer-logo d-none">
+                                <div class="site-logo">
+                                    <img src="img/logo.png" alt="Logo">
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo incididunt ut labore et dolore</p>
+                            <div class="footer-address">
+                                <ul>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-location-pin"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p>Brooklyn, New York, United States</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-phone"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-envelope"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ltn__social-media mt-20 d-none">
+                                <ul>
+                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-payment-img">
+                                <img src="img/icons/payment-6.png" alt="Payment Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ltn__copyright-area ltn__copyright-2 section-bg-5">
+            <div class="container ltn__border-top-2">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="footer-copyright-left">
+                            <div class="ltn__copyright-design clearfix">
+                                <p>&copy; <span class="current-year"></span> - Just For You</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 align-self-center">
+                        <div class="footer-copyright-right text-right">
+                            <div class="ltn__copyright-menu d-none">
+                                <ul>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Claim</a></li>
+                                    <li><a href="#">Privacy & Policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="ltn__social-media ">
+                                <ul>
+                                    <li><a href="#" title="Facebook"><i class="icon-social-facebook"></i></a></li>
+                                    <li><a href="#" title="Twitter"><i class="icon-social-twitter"></i></a></li>
+                                    <li><a href="#" title="Pinterest"><i class="icon-social-pinterest"></i></a></li>
+                                    <li><a href="#" title="Instagram"><i class="icon-social-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER AREA END -->
+
+    <script>
+        const actorsData = <%- JSON.stringify(actors) %>
+    </script>
+
+    <style>
+
+        .custom-modal.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .custom-modal {
+            position: fixed;
+            display: flex;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1000;
+            background: #0000004f;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .custom-modal-content {
+            background: white;
+            width: 290px;
+            padding: 16px;
+            position: relative;
+            z-index: 21;
+            border-radius: 15px;
+        }
+
+        .close-custom-modal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .custom-modal-content .title h4 {
+            font-weight: 600;
+        }
+
+        .custom-modal-content .title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content-vote label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        #vote-num {
+            border: unset;
+            background: #00000014;
+            color: #e91e63;
+            padding: 4px 13px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        .vote-footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .vote-footer button {
+            border-radius: 7px;
+            padding: 5px 15px;
+            background: #e91e632b;
+            color: #e91e63;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .vote-footer .action-btn {
+            background: #2196f342;
+            color: #2196f3;
+        }
+
+
+        .rank-item {
+            display: flex;
+        }
+
+        .rank-item .rank-img {
+            width: 64px;
+            overflow: hidden;
+        }
+
+        .rank-title {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .rank-info {
+            margin-left: 10px;
+        }
+
+        #rank-modal .custom-modal-content .rank-content {
+            height: 100%;
+            max-height: 70vh;
+            overflow: auto;
+        }
+    </style>
+
+    <!-- Modal Vote -->
+    <div id="vote-modal" class="custom-modal">
+        <a href="javascript:void(0)" class="_close close-custom-modal"></a>
+        <div class="custom-modal-content">
+
+            <form id="vote-form">
+                <div class="title">
+                    <h4>Nhập số tim</h4>
+
+                    <a href="javascript:void(0)" class="_close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6Z"/></svg>
+                    </a>
+
+                </div>
+
+                <div class="content-vote">
+                    <label for="vote-num">
+                        Số tim bình chọn
+                    </label>
+                    <input id="vote-num" type="number" min="1" value="" max="100" />
+                </div>
+
+                <div class="vote-footer">
+                    <button class="_close">
+                        Huỷ Bỏ
+                    </button>
+
+                    <button class="action-btn" type="submit">
+                        Gửi Tim
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- Top Modal -->
+    <div id="rank-modal" class="custom-modal">
+        <a href="javascript:void(0)" class="_close close-custom-modal"></a>
+        <div class="custom-modal-content">
+            <div class="title">
+                <h4>Bảng Xếp Hạng</h4>
+                <a href="javascript:void(0)" class="_close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6Z"/></svg>
+                </a>
+            </div>
+
+            <div class="rank-content"></div>
+
+        </div>
+    </div>
+
+
+</div>
+<!-- Body main wrapper end -->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- All JS Plugins -->
+    <script src="js/plugins.js"></script>
+    <!-- Main JS -->
+    <script src="js/main2.js"></script>
+    <script src="js/home.js"></script>
+  
+</body>
+</html>
+

@@ -1,0 +1,171 @@
+"""Exposes a URL that specifies the behavior of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behavior of this scalar."""
+  url: String!
+) on SCALAR
+
+"""
+Direct the client to resolve this field locally, either from the cache or local resolvers.
+"""
+directive @client(
+  """
+  When true, the client will never use the cache for this value. See
+  https://www.apollographql.com/docs/react/essentials/local-state/#forcing-resolvers-with-clientalways-true
+  """
+  always: Boolean
+) on FIELD | FRAGMENT_DEFINITION | INLINE_FRAGMENT
+
+"""
+Export this locally resolved field as a variable to be used in the remainder of this query. See
+https://www.apollographql.com/docs/react/essentials/local-state/#using-client-fields-as-variables
+"""
+directive @export(
+  """The variable name to export this field as."""
+  as: String!
+) on FIELD
+
+"""
+Specify a custom store key for this result. See
+https://www.apollographql.com/docs/react/advanced/caching/#the-connection-directive
+"""
+directive @connection(
+  """Specify the store key."""
+  key: String!
+
+  """
+  An array of query argument names to include in the generated custom store key.
+  """
+  filter: [String!]
+) on FIELD
+
+type Author {
+  createdAt: Float!
+  description: String!
+  id: ID!
+  name: String!
+  slug: String!
+  updatedAt: Float!
+}
+
+type Category {
+  createdAt: Float!
+  description: String!
+  id: ID!
+  name: String!
+  slug: String!
+  updatedAt: Float!
+}
+
+input CreateAuthorInput {
+  description: String = ""
+  name: String!
+}
+
+input CreateCategoryInput {
+  description: String = ""
+  name: String!
+}
+
+input CreateTagInput {
+  description: String = ""
+  name: String!
+}
+
+input GetAuthorsFilter {
+  limit: Int!
+  name: String
+  offset: Int!
+  sort: String!
+}
+
+input GetCategoriesFilter {
+  limit: Int!
+  name: String
+  offset: Int!
+  sort: String!
+}
+
+type Mutation {
+  createAuthor(input: CreateAuthorInput!): Author!
+  createCategory(input: CreateCategoryInput!): Category!
+  createTag(input: CreateTagInput!): Tag!
+  removeAuthor(input: RemoveAuthorInput!): Author!
+  removeCategory(input: RemoveCategoryInput!): Category!
+  signIn(input: SignInInput!): String!
+  signUp(input: SignUpInput!): String!
+  updateAuthor(input: UpdateAuthorInput!): Author!
+  updateCategory(input: UpdateCategoryInput!): Category!
+}
+
+type Notify {
+  id: String!
+  message: String!
+  success: Boolean
+  user: User!
+}
+
+type Query {
+  authors(filter: GetAuthorsFilter!): [Author!]!
+  categories(filter: GetCategoriesFilter!): [Category!]!
+  me: User!
+}
+
+input RemoveAuthorInput {
+  id: ID!
+}
+
+input RemoveCategoryInput {
+  id: ID!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+input SignUpInput {
+  email: String!
+  name: String!
+  password: String!
+}
+
+type Subscription {
+  notifyFired: Notify!
+}
+
+type Tag {
+  createdAt: Float!
+  description: String
+  id: ID!
+  name: String!
+  slug: String!
+  updatedAt: Float!
+}
+
+input UpdateAuthorInput {
+  description: String = ""
+  id: ID!
+  name: String
+}
+
+input UpdateCategoryInput {
+  description: String = ""
+  id: ID!
+  name: String
+}
+
+type User {
+  avatar: String!
+  createdAt: Float!
+  email: String!
+  id: ID!
+  name: String!
+  role: USER_ROLE_ENUM!
+  updatedAt: Float!
+}
+
+enum USER_ROLE_ENUM {
+  ADMIN
+  SUPER_ADMIN
+  USER
+}

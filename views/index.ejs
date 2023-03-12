@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singer Voter</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="/css/iofrm-theme17.css">
+
+    <style>
+        #error-mess {
+            margin-bottom: -10px;
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            color: red;
+        }
+
+        #error-mess:empty {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<div class="form-body without-side">
+    <div class="website-logo">
+        <a href="/">
+            <div class="logo">
+                <img class="logo-size" src="images/logo-light.svg" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <div class="img-holder">
+            <div class="bg"></div>
+            <div class="info-holder">
+                <img src="images/graphic3.svg" alt="">
+            </div>
+        </div>
+        <div class="form-holder">
+            <div id="form-auth" class="form-content" data-type="login">
+                <div class="form-items">
+                    <h3 id="auth-title">
+                        Đăng Nhập
+                    </h3>
+                    <p>Đăng nhập để bình chọn cho người mình thích</p>
+                    <form id="form-content">
+                        <input id="email" class="form-control" type="email" name="email" placeholder="E-mail" required>
+                        <input id="password" class="form-control" type="password" name="password" placeholder="Mật khẩu" required minlength="6">
+                        <p id="error-mess"></p>
+                        <div class="form-button">
+                            <button id="submit" type="submit" class="ibtn">
+                                Đăng Nhập
+                            </button>
+                        </div>
+                    </form>
+                    <div class="other-links">
+                        <div class="text">Hoặc tiếp tục với</div>
+                        <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
+                        <a href="#"><i class="fab fa-google"></i>Google</a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i>Linkedin</a>
+                    </div>
+                    <div class="page-links">
+                        <a href="/" id="toggleForm">Đăng ký ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
