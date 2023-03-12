@@ -292,4 +292,10 @@ const editListener = (element) => {
       label.text('Choose file')
     }
   })
+
+  document.querySelector('#logout').addEventListener('click', (e) => {
+    e.preventDefault()
+    Cookies.remove('_token')
+    window.location.href = '/'
+  })
 })(jQuery)
