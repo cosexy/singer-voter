@@ -6,7 +6,6 @@ import { Optional } from '@nestjs/common'
 export class SignUpInput {
   @Field(() => String)
   @IsNotEmpty()
-  @IsEmail()
   email: string
 
   @Field(() => String)
