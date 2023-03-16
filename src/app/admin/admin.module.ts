@@ -3,9 +3,10 @@ import { AdminService } from './admin.service'
 import { AdminController } from './admin.controller'
 import { AdminMiddleware } from '~/middleware/admin.middleware'
 import { ActorsModule } from '~/app/actors/actors.module'
+import { UsersModule } from '~/app/users/users.module'
 
 @Module({
-  imports: [ActorsModule],
+  imports: [ActorsModule, UsersModule],
   controllers: [AdminController],
   providers: [AdminService]
 })

@@ -1,6 +1,6 @@
 import { Core, CoreDocument } from '@app/core'
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import { Field, ObjectType } from '@nestjs/graphql'
+import { Field, Int, ObjectType } from '@nestjs/graphql'
 import { USER_ROLE_ENUM } from '../enums/roles.enum'
 
 export type UserDocument = User & CoreDocument
@@ -20,6 +20,10 @@ export class User extends Core {
   @Prop({ index: true, unique: true, required: true })
   @Field(() => String)
   email: string
+
+  @Prop({ index: true, required: true, default: 0 })
+  @Field(() => Int)
+  balance: number
 
   // avatar
   @Prop({ default: '' })
