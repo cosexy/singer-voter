@@ -47,6 +47,20 @@ const submitVote = () => {
       return
     }
 
+    const currentHeart = Number(
+      document.querySelector('#currentHeart').innerText
+    )
+
+    if (_vote > currentHeart) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Số tim không đủ',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      return
+    }
+
     const _vote_ID = document
       .querySelector('#vote-modal')
       .getAttribute('data-vote')
@@ -86,6 +100,8 @@ const submitVote = () => {
       // update array actorsData
       const actor = actorsData.find((actor) => actor._id === _vote_ID)
       actor.likes = likes + _vote
+
+      document.querySelector('#currentHeart').innerText = currentHeart - _vote
     } else {
       console.log('error')
     }
@@ -158,4 +174,10 @@ ready(() => {
   initVoteModal()
   submitVote()
   toggleTop()
+
+  // document.querySelector('#logout').addEventListener('click', (e) => {
+  //   e.preventDefault()
+  //   Cookies.remove('_token')
+  //   window.location.href = '/'
+  // })
 })

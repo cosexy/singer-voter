@@ -32,7 +32,7 @@ export class AdminController {
   @Get('/users')
   @UseGuards(AdminGuard)
   @UseFilters(AdminFilter)
-  @Render('admin/index')
+  @Render('admin/users/index')
   async users() {
     const actors = await this.usersService.find()
     return {

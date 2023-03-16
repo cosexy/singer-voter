@@ -74,13 +74,6 @@
                     </div>
 
                     <ul class="navbar-nav header-right">
-
-                        <li class="nav-item">
-                            <button id="add-actor" type="button" class="btn btn-sm btn-success">
-                                Add New
-                            </button>
-                        </li>
-
                         <li class="nav-item dropdown header-profile">
                             <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                                 <div class="header-info">
@@ -112,11 +105,19 @@
         <div class="deznav-scroll">
             <ul class="metismenu" id="menu">
                 <li>
-                    <a class="ai-icon" href="javascript:void(0)" aria-expanded="false">
+                    <a class="ai-icon" href="/admin" aria-expanded="false">
                         <i class="flaticon-381-networking"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
+
+                <li>
+                    <a class="ai-icon" href="/admin/users" aria-expanded="false">
+                        <i class="flaticon-381-user-7"></i>
+                        <span class="nav-text">Users</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>
@@ -137,7 +138,7 @@
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Vote</th>
+                                <th class="text-center">Balance</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th style="text-align: right">Action</th>
@@ -148,12 +149,11 @@
                                 <tr row-id='<%- actor.id %>'>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <img src="<%- actor.avatar %>"  class="rounded-circle mr-2 width40 height40" alt="">
-                                            <span><%- actor.name %></span>
+                                            <span><%- actor.email %></span>
                                         </div>
                                     </td>
-                                    <td class="wspace-no _count_likes">
-                                        <%- actor.likes %>
+                                    <td class="wspace-no _count_likes text-center">
+                                        <%- actor.balance %>
                                     </td>
                                     <td>
                                         <span class="text-success font-w700">
@@ -205,35 +205,17 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add New</h5>
+                    <h5 class="modal-title">Modify User Balance</h5>
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form id="form-actor" class="needs-validation" novalidate>
-                        <input type="text" class="d-none" name="id" >
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="" required name="name">
-                            </div>
-                        </div>
+                        <input type="text" class="d-none _id_user" name="id" >
                         <div class="form-row _like_">
                             <div class="form-group col-12">
                                 <label>Likes</label>
-                                <input type="number" min="0" class="form-control" placeholder="" required name="likes">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <label>Avatar</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-primary btn-sm" type="button">Button</button>
-                                </div>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" required name="avatar" accept="image/*">
-                                    <label class="custom-file-label">Choose file</label>
-                                </div>
+                                <input type="number" min="0" class="form-control _likes_input" placeholder="" required name="likes">
                             </div>
                         </div>
                     </form>
@@ -241,7 +223,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
                     <button form="form-actor" id="submit-actor" type="submit" class="btn btn-primary">
-                        Create
+                        Update
                     </button>
                 </div>
             </div>
@@ -263,7 +245,7 @@
 <script src="/vendor/global/global.min.js"></script>
 <script src="/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 <script src="/js/custom.min.js"></script>
-<script src="/js/custom-admin.js"></script>
+<script src="/js/user-custom-admin.js"></script>
 <script src="/js/deznav-init.js"></script>
 
 <!-- Datatable -->
