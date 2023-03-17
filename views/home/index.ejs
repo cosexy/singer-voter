@@ -97,6 +97,49 @@
                                                     <span class="ml-2">Thông tin cá nhân</span>
                                                 </a>
 
+                                                <a id="withdraw" href="javascript:void(0)" class="dropdown-item ai-icon">
+
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11.025 21v-2.15q-1.325-.3-2.287-1.15q-.963-.85-1.413-2.4l1.85-.75q.375 1.2 1.113 1.825q.737.625 1.937.625q1.025 0 1.738-.462q.712-.463.712-1.438q0-.875-.55-1.388q-.55-.512-2.55-1.162q-2.15-.675-2.95-1.612q-.8-.938-.8-2.288q0-1.625 1.05-2.525q1.05-.9 2.15-1.025V3h2v2.1q1.25.2 2.063.912q.812.713 1.187 1.738l-1.85.8q-.3-.8-.85-1.2q-.55-.4-1.5-.4q-1.1 0-1.675.488q-.575.487-.575 1.212q0 .825.75 1.3q.75.475 2.6 1q1.725.5 2.613 1.587q.887 1.088.887 2.513q0 1.775-1.05 2.7q-1.05.925-2.6 1.15V21Z"/></svg>
+                                                    <span class="ml-2">Rút Tiền</span>
+                                                </a>
+
+                                                <script>
+                                                  let count = 0
+                                                    document.querySelector('#withdraw').addEventListener('click', () => {
+                                                        document.querySelector('#withdraw-modal').classList.add('is-active')
+                                                      if (count === 0) {
+                                                        document.querySelectorAll('#withdraw-modal ._close').forEach((el) => {
+                                                          el.addEventListener('click', () => {
+                                                            document.querySelector('#withdraw-modal').classList.remove('is-active')
+                                                          })
+                                                        })
+                                                        count++
+                                                      }
+                                                    });
+                                                </script>
+
+                                                <a id="privacy" href="javascript:void(0)" class="dropdown-item ai-icon">
+
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
+
+                                                    <span class="ml-2">Quy Tắc Hoạt Động</span>
+                                                </a>
+
+                                                <script>
+                                                    let count2 = 0
+                                                        document.querySelector('#privacy').addEventListener('click', () => {
+                                                            document.querySelector('#privacy-modal').classList.add('is-active')
+                                                        if (count2 === 0) {
+                                                            document.querySelectorAll('#privacy-modal ._close').forEach((el) => {
+                                                            el.addEventListener('click', () => {
+                                                                document.querySelector('#privacy-modal').classList.remove('is-active')
+                                                            })
+                                                            })
+                                                            count2++
+                                                        }
+                                                        });
+                                                </script>
+
                                                 <a href="https://zingmp3.vn/" class="dropdown-item ai-icon">
 
                                                     <svg xmlns="http://www.w3.org/2000/svg"  class="text-danger" width="18" height="18" viewBox="0 0 20 20"><path fill="currentColor" d="M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0Zm7.5 6.48a3.38 3.38 0 0 1-1.75 2.05a5.64 5.64 0 0 0-3.27-3.75a2 2 0 0 1 .79-1.09c-.43-.28-1-.42-1.34.07c-.53.69 0 1.61.21 2v.14A3.07 3.07 0 0 1 9.9 4.46a5.2 5.2 0 0 0-2.76.69a3.44 3.44 0 0 1 .16-1.68a2.21 2.21 0 0 0 1.92-.8c.46-.52-.13-1.18-.59-1.58h.36a7.86 7.86 0 0 1 3.89 1a5.61 5.61 0 0 1 2.27 4.26c.24 0 .7-.55.91-.92c.172.339.319.69.44 1.05ZM9 16.84c-2.05-2.08.25-3.75-1-5.24c-.92-.85-2.29-.26-3.11-1.23a4.08 4.08 0 0 1 1.43-3.93c.52-.44 4-1 5.42.22a5.22 5.22 0 0 1 1.67 2.74a2.35 2.35 0 0 0 1.32-.29c.41 2.98-3.15 6.74-5.73 7.73ZM5.15 2.09a1.84 1.84 0 0 1 2.16.66c-.42.38-.94.63-1.5.72A3 3 0 0 1 6 2.61l-.85-.52Z"/></svg>
@@ -368,6 +411,38 @@
 
             <div class="rank-content"></div>
 
+        </div>
+    </div>
+
+    <div id="withdraw-modal" class="custom-modal">
+        <a href="javascript:void(0)" class="_close close-custom-modal"></a>
+        <div class="custom-modal-content">
+            <div class="title">
+                <h4>Rút Tiền</h4>
+                <a href="javascript:void(0)" class="_close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6Z"/></svg>
+                </a>
+            </div>
+
+            <div>
+                Vui lòng đăng kí để sủ dụng dịch vụ này
+            </div>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="custom-modal">
+        <a href="javascript:void(0)" class="_close close-custom-modal"></a>
+        <div class="custom-modal-content">
+            <div class="title">
+                <h4>Quy Tắc Hoạt Động</h4>
+                <a href="javascript:void(0)" class="_close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6Z"/></svg>
+                </a>
+            </div>
+
+            <div>
+                Hãy chọn 1 ca sĩ bạn yêu thích để ca sĩ bạn yêu thích có vị trí cao trên bảng xếp hạng  và nhận được giải thởng cao nhất !
+            </div>
         </div>
     </div>
 
